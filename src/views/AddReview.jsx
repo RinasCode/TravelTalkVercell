@@ -34,14 +34,14 @@ export default function AddReview() {
     formDataToSend.append("authorId", localStorage.getItem('userId')); 
 
     try {
-      const response = await axios.post("https://server.rinasismita.online/review", formDataToSend, {
+      const response = await axios.post("https://travel-talk-be-cc0215f22480.herokuapp.com/review", formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${localStorage.getItem('access_token')}`
         },
       });
       console.log("Review added:", response.data);
-      navigate("/myreview"); 
+      navigate("/"); 
     } catch (error) {
       console.error("Error adding review:", error);
     }

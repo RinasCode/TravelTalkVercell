@@ -60,7 +60,7 @@ export const fetchAsync = () => async (dispatch) => {
     try {
         dispatch(fetchPending());
 
-        const { data } = await axios.get("https://server.rinasismita.online/review", {
+        const { data } = await axios.get("https://travel-talk-be-cc0215f22480.herokuapp.com/review", {
             headers: {
                 Authorization: `Bearer ${localStorage.access_token}`
             }

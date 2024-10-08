@@ -16,7 +16,7 @@ export default function ReviewForm() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://server.rinasismita.online/review/gemini",
+        "https://travel-talk-be-cc0215f22480.herokuapp.com/review/gemini",
         { harga, lokasi },
         {
           headers: {

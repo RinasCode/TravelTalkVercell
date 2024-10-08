@@ -26,7 +26,8 @@ export function SimpleRegistrationForm({ url }) {
         duration: 3000,
         style: { background: "green" },
       }).showToast();
-      // Redirect to login page or home page
+      // Redirect to login page
+
     } catch (error) {
       // Handle error, e.g., show error message
       Toastify({

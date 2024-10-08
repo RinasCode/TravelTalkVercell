@@ -15,7 +15,7 @@ import RecomendationHotel from "../views/HotelRecomendation";
 import HotelList from "../views/ResultGemini";
 import Toastify from "toastify-js";
 
-const url = "https://server.rinasismita.online"; // Sesuaikan dengan URL backend
+const url = "https://travel-talk-be-cc0215f22480.herokuapp.com"; // Sesuaikan dengan URL backend
 
 const router = createBrowserRouter([
   {

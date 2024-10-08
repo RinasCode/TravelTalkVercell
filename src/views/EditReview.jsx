@@ -21,13 +21,13 @@ export default function EditReview() {
     // Fetch review data by ID from API
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://server.rinasismita.online/review/${id}`, {
+        const response = await axios.get(`https://travel-talk-be-cc0215f22480.herokuapp.com/review/${id}`, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem('access_token')}`
           }
         });
 
-        const reviewData = response.data;
+        const reviewData = response.data.reviewed;
         setFormData({
           name: reviewData.name || "",
           rate: reviewData.rate || "",
@@ -77,7 +77,7 @@ export default function EditReview() {
     
     
     try {
-      await axios.put(`https://server.rinasismita.online/review/${id}`, updatedData, {
+      await axios.put(`https://travel-talk-be-cc0215f22480.herokuapp.com/review/${id}`, updatedData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "Authorization": `Bearer ${localStorage.getItem('access_token')}`

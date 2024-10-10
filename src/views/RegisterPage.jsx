@@ -122,7 +122,7 @@ export function SimpleRegistrationForm({ url }) {
               </Button>
               <Typography color="white" className="mt-4 text-center font-normal">
                 Already have an account?{" "}
-                <a href="http://localhost:8000/login" className="font-medium text-gray-900">
+                <a href="https://travel-talk-be-cc0215f22480.herokuapp.com/login" className="font-medium text-gray-900">
                   Sign In
                 </a>
               </Typography>

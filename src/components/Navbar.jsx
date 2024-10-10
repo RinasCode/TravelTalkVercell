@@ -39,19 +39,19 @@ export function NavbarDefault() {
         </MenuHandler>
         <MenuList>
           <MenuItem>
-            <a href="http://localhost:8000/myreview" className="flex items-center gap-2 w-full">
+            <a href="https://travel-talk-be-cc0215f22480.herokuapp.com/myreview" className="flex items-center gap-2 w-full">
               <MdRateReview />
               My Review
             </a>
           </MenuItem>
           <MenuItem>
-            <a href="http://localhost:8000/add" className="flex items-center gap-2 w-full">
+            <a href="https://travel-talk-be-cc0215f22480.herokuapp.com/add" className="flex items-center gap-2 w-full">
               <MdAdd />
               Add Review
             </a>
           </MenuItem>
           <MenuItem>
-            <a href="http://localhost:8000/hotels" className="flex items-center gap-2 w-full">
+            <a href="https://travel-talk-be-cc0215f22480.herokuapp.com/hotels" className="flex items-center gap-2 w-full">
               <MdHotel />
               Hotel Recommendations
             </a>
@@ -75,7 +75,7 @@ export function NavbarDefault() {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="http://localhost:8000/"
+          href="https://travel-talk-be-cc0215f22480.herokuapp.com/"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
           TravelTalk

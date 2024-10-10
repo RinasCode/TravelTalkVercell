@@ -28,6 +28,7 @@ export function SimpleLoginForm({ url }) {
         },
       });
       localStorage.setItem("access_token", data.access_token);
+      console.log("Token after Google login:", localStorage.getItem("access_token"));
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -55,6 +56,7 @@ export function SimpleLoginForm({ url }) {
       const addedData = { email, password };
       const { data } = await axios.post(`${url}/login`, addedData);
       localStorage.setItem("access_token", data.access_token);
+      console.log("Token after login:", localStorage.getItem("access_token")); 
 
       Toastify({
         text: "Success Login",

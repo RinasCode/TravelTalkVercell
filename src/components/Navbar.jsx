@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Navbar,
   MobileNav,
@@ -11,7 +11,7 @@ import {
   MenuList,
   MenuItem,
 } from "@material-tailwind/react";
-import { MdRateReview, MdAdd, MdHotel, MdLogout } from "react-icons/md";
+import { MdRateReview, MdAdd, MdLogout, MdHotel } from "react-icons/md";
 
 export function NavbarDefault() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -26,43 +26,51 @@ export function NavbarDefault() {
 
   function handleLogout() {
     localStorage.clear();
-    Toastify({
-      text: "Logged out successfully!",
-      duration: 3000,
-      gravity: "top",
-      position: "left",
-      style: { background: "linear-gradient(to right, #ff5f6d, #ffc371)" },
-    }).showToast();
     navigate("/login");
+  }
+
+  function handleNavigation(path) {
+    navigate(path);
   }
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <li>
-        <Link to="/" className="text-blue-500 hover:underline">
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to="/myreview" className="text-blue-500 hover:underline">
-          My Review
-        </Link>
-      </li>
-      <li>
-        <Link to="/add" className="text-blue-500 hover:underline">
-          Add Review
-        </Link>
-      </li>
-      <li>
-        <Link to="/hotels" className="text-blue-500 hover:underline">
-          Hotel Recommendations
-        </Link>
-      </li>
-      <li>
-        <Button variant="gradient" onClick={handleLogout}>
-          Logout
-        </Button>
-      </li>
+      <Menu>
+        <MenuHandler>
+          <Button variant="text" size="sm" className="flex items-center gap-x-1">
+            Akun
+          </Button>
+        </MenuHandler>
+        <MenuList>
+          <MenuItem onClick={() => handleNavigation("/myreview")}>
+            <div className="flex items-center gap-2 w-full cursor-pointer">
+              <MdRateReview />
+              Ulasan Saya
+            </div>
+          </MenuItem>
+          <MenuItem onClick={() => handleNavigation("/add")}>
+            <div className="flex items-center gap-2 w-full cursor-pointer">
+              <MdAdd />
+              Tambah Ulasan
+            </div>
+          </MenuItem>
+          <MenuItem onClick={() => handleNavigation("/hotels")}>
+            <div className="flex items-center gap-2 w-full cursor-pointer">
+              <MdHotel />
+              Rekomendasi Hotel
+            </div>
+          </MenuItem>
+          <MenuItem>
+            <Button
+              onClick={handleLogout}
+              className="flex items-center gap-2 w-full"
+            >
+              <MdLogout />
+              Keluar
+            </Button>
+          </MenuItem>
+        </MenuList>
+      </Menu>
     </ul>
   );
 
@@ -71,7 +79,8 @@ export function NavbarDefault() {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="/"
+          href="#"
+          onClick={() => navigate("/")}
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
           TravelTalk
@@ -92,7 +101,11 @@ export function NavbarDefault() {
               stroke="currentColor"
               strokeWidth={2}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
             <svg
@@ -102,7 +115,11 @@ export function NavbarDefault() {
               stroke="currentColor"
               strokeWidth={2}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           )}
         </IconButton>

@@ -39,19 +39,19 @@ export function NavbarDefault() {
         </MenuHandler>
         <MenuList>
           <MenuItem>
-            <a href="http://localhost:8000/myreview" className="flex items-center gap-2 w-full">
+            <a href="http://localhost:5173/myreview" className="flex items-center gap-2 w-full">
               <MdRateReview />
               My Review
             </a>
           </MenuItem>
           <MenuItem>
-            <a href="http://localhost:8000/add" className="flex items-center gap-2 w-full">
+            <a href="http://localhost:5173/add" className="flex items-center gap-2 w-full">
               <MdAdd />
               Add Review
             </a>
           </MenuItem>
           <MenuItem>
-            <a href="http://localhost:8000/hotels" className="flex items-center gap-2 w-full">
+            <a href="http://localhost:5173/hotels" className="flex items-center gap-2 w-full">
               <MdHotel />
               Hotel Recommendations
             </a>
@@ -75,7 +75,7 @@ export function NavbarDefault() {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="http://localhost:8000"
+          href="http://localhost:5173"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
           TravelTalk

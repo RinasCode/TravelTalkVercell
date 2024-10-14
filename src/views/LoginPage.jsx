@@ -166,7 +166,7 @@ export function SimpleLoginForm({ url }) {
             <Typography color="white" className="mt-4 text-center font-normal">
               Don't have an account?
               <a
-                href="http://localhost:8000/register"
+                href="http://localhost:5173/register"
                 className="font-medium text-white"
               >
                 Sign Up

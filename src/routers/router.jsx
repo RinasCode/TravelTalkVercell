@@ -18,6 +18,7 @@ import Toastify from "toastify-js";
 const url = "https://travel-talk-be-cc0215f22480.herokuapp.com"; // Sesuaikan dengan URL backend
 
 const router = createBrowserRouter([
+  // Route yang tidak membutuhkan autentikasi
   {
     path: "/login",
     element: <SimpleLoginForm url={url} />,
@@ -34,9 +35,8 @@ const router = createBrowserRouter([
           style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
           },
-          onClick: function () {},
         }).showToast();
-        return redirect("/"); // Redirect to home if already logged in
+        return redirect("/"); // Redirect ke halaman utama jika sudah login
       }
       return null;
     },
@@ -45,6 +45,8 @@ const router = createBrowserRouter([
     path: "/register",
     element: <SimpleRegistrationForm url={url} />,
   },
+
+  // Route yang membutuhkan autentikasi
   {
     element: <BaseLayout />,
     loader: () => {
@@ -60,9 +62,8 @@ const router = createBrowserRouter([
           style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
           },
-          onClick: function () {},
         }).showToast();
-        return redirect("/login"); // Redirect to login if not authenticated
+        return redirect("/login"); // Redirect ke login jika tidak ada token
       }
       return null;
     },

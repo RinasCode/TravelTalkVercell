@@ -166,7 +166,7 @@ export function SimpleLoginForm({ url }) {
             <Typography color="white" className="mt-4 text-center font-normal">
               Don't have an account?
               <a
-                href="https://travel-talk-be-cc0215f22480.herokuapp.com/register"
+                href="http://localhost:8000/register"
                 className="font-medium text-white"
               >
                 Sign Up

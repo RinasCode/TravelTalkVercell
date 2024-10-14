@@ -38,26 +38,26 @@ export function NavbarDefault() {
       <Menu>
         <MenuHandler>
           <Button variant="text" size="sm" className="flex items-center gap-x-1">
-            Akun
+            Account
           </Button>
         </MenuHandler>
         <MenuList>
           <MenuItem onClick={() => handleNavigation("/myreview")}>
             <div className="flex items-center gap-2 w-full cursor-pointer">
               <MdRateReview />
-              Ulasan Saya
+              My Reviews
             </div>
           </MenuItem>
           <MenuItem onClick={() => handleNavigation("/add")}>
             <div className="flex items-center gap-2 w-full cursor-pointer">
               <MdAdd />
-              Tambah Ulasan
+              Add Review
             </div>
           </MenuItem>
           <MenuItem onClick={() => handleNavigation("/hotels")}>
             <div className="flex items-center gap-2 w-full cursor-pointer">
               <MdHotel />
-              Rekomendasi Hotel
+              Hotel Recommendations
             </div>
           </MenuItem>
           <MenuItem>
@@ -66,7 +66,7 @@ export function NavbarDefault() {
               className="flex items-center gap-2 w-full"
             >
               <MdLogout />
-              Keluar
+              Logout
             </Button>
           </MenuItem>
         </MenuList>
